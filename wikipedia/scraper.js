@@ -90,6 +90,9 @@ async function getAllMatchLinks() {
 }
 
 // parses the name from the html element that contains the name
+// "text" the input could look like (there are other cases other then these):
+// "<a href="/wiki/Song_Yadong" title="Song Yadong">Song Yadong</a>"
+// "Cameron Smotherman \n"
 async function getFighterName(text) {
 
     let final = text.replaceAll("\n", "");
@@ -204,7 +207,7 @@ async function scrapeWikipedia() {
 
             await scrapeEvent(links[i].title, i, links.length);
 
-            // pauses for 0.1 seconds
+            // pauses for 0.1 seconds so that wikipedia doesn't kick for too fast requests
             await sleep(100);
     }
 
