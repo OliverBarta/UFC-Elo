@@ -66,7 +66,7 @@ async function getAllMatchLinks() {
             if (href && href.startsWith("/wiki/") && title && !link.classList.contains("new")) {
                 const fullUrl = `https://en.wikipedia.org${href}`;
                 
-                // Keeps only unique links
+                // Keeps only unique links with "UFC" in them and no "Apex"
                 if (!seenUrls.has(fullUrl) && title.includes("UFC") && !title.includes("Apex")) {
                     events.push({
                         title: title,
@@ -76,7 +76,7 @@ async function getAllMatchLinks() {
             }
         });
 
-        console.log(`\n✅ Success! Successfully extracted ${events.length} past UFC events from the table.`);
+        console.log(`\n✅ Success! Successfully got ${events.length} past UFC event links.`);
         console.log("Here is a preview of the most recent past events:");
         // Shows the first 5
         console.log(events.slice(0, 5));
@@ -93,17 +93,20 @@ async function getAllMatchLinks() {
 async function getFighterName(text) {
 
     let final = text.replaceAll("\n", "");
-    final = final.replaceAll(" (fighter)", "");
-
+    
     // if text includes "title=" i assume it is a <a> html element 
     if (final.includes("title=")) {
         const splitText = final.split("title=");
 
-        return splitText[1].split("\"")[1];
+        final = splitText[1].split("\"")[1].trim();
+        final = final.split("(")[0].trim();
+
+        return final;
     }
 
-    return final;
+    final = final.split("(")[0].trim();
 
+    return final.trim();
 }
 
 // scrapes a wikipedia event page for results of the matches for that event
@@ -113,8 +116,6 @@ async function scrapeEvent(title, eventNum, numOfEvents) {
     const url = `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(title)}&format=json&prop=text&origin=*`;
     // Example: `https://en.wikipedia.org/w/api.php?action=parse&page=Las_Vegas&format=json&prop=text&origin=*`;
     
-    console.log(eventNum, "/", numOfEvents ,"Finding fighters for event: ", title);
-
     try {
         const response = await fetch(url, {
             headers: { 'User-Agent': USER_AGENT }
@@ -148,11 +149,11 @@ async function scrapeEvent(title, eventNum, numOfEvents) {
         }
 
         if (!targetTable) {
-            console.error("❌ Could not find any table directly after the Results section for: ", title);
+            console.log(eventNum, "/", numOfEvents, "❌ Could not find a table after the Results section for: ", title);
             return;
         }
 
-        console.log(`✅ Successfully targeted the Results table for: ${title}`);
+        console.log(eventNum, "/", numOfEvents, `✅ Found the Results table for: ${title}`);
 
             
         // This safely isolates the table cells and links
@@ -199,20 +200,16 @@ async function scrapeWikipedia() {
 
     const links = await getAllMatchLinks();
 
-    for (let i = 0; i < links.length; i++) {
+    for (let i = 0; i < 5; i++) {
 
             await scrapeEvent(links[i].title, i, links.length);
 
-            // pauses for 0.3 seconds
-            await sleep(300);
+            // pauses for 0.1 seconds
+            await sleep(100);
     }
-
-    console.log(allMatches);
 
     fs.writeFileSync('allMatches.json', JSON.stringify(allMatches, null, 2), 'utf-8');
 
 }
 
 scrapeWikipedia();
-
-// scrapeEvent('UFC 116', 1, 1);
