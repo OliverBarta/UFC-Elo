@@ -16,8 +16,9 @@
   height: 50px;
   width: 70%;
   border-radius: 15px;
-  border: 1px solid var(--text-h);
-  background: var(--bg-translucent);
+  border: 1px solid var(--text);
+  background: var(--bg);
+  color: var(--text-h);
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -31,15 +32,15 @@
   all: unset;
   padding: 10px 20px;
   box-sizing: border-box;
-  border: 1px solid var(--text-h);
-  background-color: var(--other-bg);
+  background: var(--other-bg);
   color: var(--text-other);
+  border: 1px solid var(--text-other);
   border-radius: 15px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .filtersToggle:hover {
   border: 1px solid var(--text);
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
 }
