@@ -1,7 +1,10 @@
 :root {
   --text: #6b6375;
   --text-h: #08060d;
+  --text-other: #dddddd;
   --bg: #fff;
+  --bg-translucent: rgba(211, 211, 211, 0.9);
+  --other-bg: rgba(85, 85, 85, 0.9);
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -34,7 +37,10 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
+    --text-other: #252525;
     --bg: #16171d;
+    --bg-translucent: rgba(33, 33, 33, 0.9);
+    --other-bg: rgba(209, 209, 209, 0.9);
     --border: #2e303a;
     --code-bg: #1f2028;
     --accent: #c084fc;
