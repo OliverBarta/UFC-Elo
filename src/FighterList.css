@@ -12,7 +12,8 @@
 }
 
 .cellTitleName {
-    background: var(--bg-translucent);
+    background: var(--other-bg);
+    color: var(--text-other);
     border-top-left-radius: 15px;
     box-sizing: border-box;
     padding: 10px 10px;
@@ -20,7 +21,8 @@
 }
 
 .cellTitleElo {
-    background: var(--bg-translucent);
+    background: var(--other-bg);
+    color: var(--text-other);
     border-top-right-radius: 15px;
     box-sizing: border-box;
     padding: 10px 10px;
@@ -31,6 +33,7 @@
     background: var(--bg);
     box-sizing: border-box;
     padding: 10px 10px;
+    color: var(--text-h);
     
 }
 

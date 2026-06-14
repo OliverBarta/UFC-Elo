@@ -1,3 +1,10 @@
+.mainArea {
+  width: 926px;
+  max-width: 100%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
 
 .searchArea {
   align-self: center;
