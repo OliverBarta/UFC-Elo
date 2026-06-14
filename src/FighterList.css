@@ -1,21 +1,36 @@
 .grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 10px;
+    margin-bottom: 10px;
+
+
+    border-radius: 15px;
+    background: black;
+    gap: 1px;
+    outline: 1px solid black;
 }
 
-.cellTitle {
-    width: 50%;
-    box-sizing: border-box;
+.cellTitleName {
     background: var(--bg-translucent);
+    border-top-left-radius: 15px;
+    box-sizing: border-box;
     padding: 10px 10px;
-    outline: 1px solid black;
+
+}
+
+.cellTitleElo {
+    background: var(--bg-translucent);
+    border-top-right-radius: 15px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+
 }
 
 .cell {
-    width: 50%;
+    background: var(--bg);
     box-sizing: border-box;
     padding: 10px 10px;
-    outline: 1px solid black;
+    
 }
 
