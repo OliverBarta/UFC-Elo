@@ -1,4 +1,21 @@
 .grid {
-    background-color: green;
-    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
+
+.cellTitle {
+    width: 50%;
+    box-sizing: border-box;
+    background: var(--bg-translucent);
+    padding: 10px 10px;
+    outline: 1px solid black;
+}
+
+.cell {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    outline: 1px solid black;
+}
+
