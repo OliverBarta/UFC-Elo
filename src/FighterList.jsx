@@ -1,5 +1,7 @@
 import './FighterList.css'
 
+import eloData from '/Users/oliver/UFC-Elo/wikipedia/fighterElo.json'
+
 
 function FighterList() {
 
@@ -8,6 +10,10 @@ function FighterList() {
         <>
             <div className='grid'>
                 <div>Test</div>
+
+                {eloData.map(name => (
+                    <div id={name}>{name}</div>
+                ))}
             </div>
         </>
     )

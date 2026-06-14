@@ -58,5 +58,5 @@ for i in range(size-1,0,-1):
 json_wpath = BASE_DIR / "fighterElo.json"
 
 with open(json_wpath, "w", encoding="utf-8") as file:
-    json.dump(allFighters, file)
+    json.dump(allFighters, file, indent=4, ensure_ascii=False)
 
