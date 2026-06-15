@@ -1,6 +1,6 @@
 import './FighterList.css'
 
-import eloData from '/Users/oliver/UFC-Elo/wikipedia/fighterElo.json'
+import eloData from './assets/fighterEloFinal.json'
 
 
 
