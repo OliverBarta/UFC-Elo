@@ -22,7 +22,6 @@ function FighterList({ searchedName }) {
             <div className='grid'>
                 <div className={eloHighToLowSearch.length === 0 ? 'cellTitleNameOnlyOne' : 'cellTitleName'}>Name</div>
                 <div className={eloHighToLowSearch.length === 0 ? 'cellTitleEloOnlyOne' : 'cellTitleElo'}>Elo</div>
-
                 {eloHighToLowSearch.map(name => (
                     <>
                         <div className="cell" id={name}>{name}</div>
@@ -30,6 +29,9 @@ function FighterList({ searchedName }) {
                     </>
                 ))}
             </div>
+            {eloHighToLowSearch.length === 0 &&
+                <div>No results</div>
+            }
         </>
     )
 }
