@@ -9,6 +9,7 @@ import './App.css'
 function App() {
   const [filterIsOpen, setFilterIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
+  const [searchedName, setSearchedName] = useState('');
   
   // toggles the filter open and closed
   const toggleFilterMenu = () => {
@@ -37,10 +38,13 @@ function App() {
         <div className='searchArea'>
           {isMobile && <button className='searchBarContainer' style={{width: "85px"}} onClick={toggleFilterMenu}>Filters</button>}
           <div className='searchBarContainer'>
-            <input type="text" placeholder="Enter fighter name" autoComplete="off" className='searchBar' />
+            <input type="text" placeholder="Enter fighter name" autoComplete="off" className='searchBar'
+              value={searchedName}
+              onChange={(e) => setSearchedName(e.target.value)}
+            />
           </div>
         </div>
-        <FighterList/>
+        <FighterList searchedName={searchedName}/>
       </div>
 
     </>

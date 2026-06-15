@@ -4,7 +4,6 @@
     margin-top: 10px;
     margin-bottom: 10px;
 
-
     border-radius: 15px;
     background: black;
     gap: 1px;
@@ -17,13 +16,31 @@
     border-top-left-radius: 15px;
     box-sizing: border-box;
     padding: 10px 10px;
-
 }
 
 .cellTitleElo {
     background: var(--other-bg);
     color: var(--text-other);
     border-top-right-radius: 15px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+
+}
+
+.cellTitleNameOnlyOne {
+    background: var(--other-bg);
+    color: var(--text-other);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+}
+
+.cellTitleEloOnlyOne {
+    background: var(--other-bg);
+    color: var(--text-other);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     box-sizing: border-box;
     padding: 10px 10px;
 
