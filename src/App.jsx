@@ -23,8 +23,6 @@ function App() {
 
   }, []);
 
-  const shouldShowMobileFilter = filterIsOpen && isMobile;
-
   return (
     <>
       {(!isMobile || filterIsOpen) && <div className='filterArea'>
