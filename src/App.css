@@ -13,7 +13,7 @@
   z-index: 10;
   width: 100%;
   max-width: 400px;
-  background: var(--accent-bg);
+  background: var(--other-bg);
   border-radius: 15px;
 }
 
@@ -98,9 +98,9 @@
   left: 340px;
   padding: 5px 10px;
   border-radius: 20px;
-  border: 1px solid var(--bg);
-  color: var(--text-other);
-  background: var(--text-h);
+  border: 1px solid var(--text-other);
+  color: var(--text-h);
+  background: var(--bg);
   cursor: pointer;
   overflow: hidden;
   box-shadow: none;
