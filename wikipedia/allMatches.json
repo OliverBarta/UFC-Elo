@@ -1,5 +1,40 @@
 [
   {
+    "fighter1": "Justin Gaethje",
+    "fighter2": "Ilia Topuria",
+    "winner": "Justin Gaethje"
+  },
+  {
+    "fighter1": "Ciryl Gane",
+    "fighter2": "Alex Pereira",
+    "winner": "Ciryl Gane"
+  },
+  {
+    "fighter1": "Sean O'Malley",
+    "fighter2": "Aiemann Zahabi",
+    "winner": "Sean O'Malley"
+  },
+  {
+    "fighter1": "Josh Hokit",
+    "fighter2": "Derrick Lewis",
+    "winner": "Josh Hokit"
+  },
+  {
+    "fighter1": "Maurício Ruffy",
+    "fighter2": "Michael Chandler",
+    "winner": "Maurício Ruffy"
+  },
+  {
+    "fighter1": "Bo Nickal",
+    "fighter2": "Kyle Daukaus",
+    "winner": "Bo Nickal"
+  },
+  {
+    "fighter1": "Diego Lopes",
+    "fighter2": "Steve Garcia",
+    "winner": "Diego Lopes"
+  },
+  {
     "fighter1": "Gabriel Bonfim",
     "fighter2": "Belal Muhammad",
     "winner": "Gabriel Bonfim"

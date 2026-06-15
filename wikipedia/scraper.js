@@ -203,7 +203,7 @@ async function scrapeWikipedia() {
 
     const links = await getAllMatchLinks();
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < links.length; i++) {
 
             await scrapeEvent(links[i].title, i, links.length);
 
