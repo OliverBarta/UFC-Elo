@@ -1,4 +1,4 @@
-import matches from './allMatches.json'
+import matches from '../wikipedia/allMatches.json'
 
 function calculate_elo(fighter1, fighter2, winner, k){
     fighter1_elo = allFighters.fighter1;
